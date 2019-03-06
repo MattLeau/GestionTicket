@@ -14,7 +14,7 @@ class projets
 {
     /**
      * @var int
-     *
+     * @ORM\OneToMany(targetEntity="user", mappedBy="p
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
