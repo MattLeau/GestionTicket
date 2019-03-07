@@ -14,7 +14,7 @@ class user
 {
     /**
      * @var int
-     *
+     * @ORM\ManyToOne(targetEntity="projets", inversedBy="user")
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")

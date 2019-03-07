@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Taches list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Projet</th>
+                <th>Evolution</th>
+                <th>Affectation</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tach in taches %}
+            <tr>
+                <td><a href="{{ path('taches_show', { 'id': tach.id }) }}">{{ tach.id }}</a></td>
+                <td>{{ tach.projet }}</td>
+                <td>{{ tach.evolution }}</td>
+                <td>{{ tach.affectation }}</td>
+                <td>{{ tach.description }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('taches_show', { 'id': tach.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('taches_edit', { 'id': tach.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('taches_new') }}">Create a new tach</a>
+        </li>
+    </ul>
+{% endblock %}
