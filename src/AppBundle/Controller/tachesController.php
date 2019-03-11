@@ -8,14 +8,14 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Tach controller.
+ * Tache controller.
  *
  * @Route("taches")
  */
 class tachesController extends Controller
 {
     /**
-     * Lists all tach entities.
+     * Lists all taches entities.
      *
      * @Route("/", name="taches_index")
      * @Method("GET")
@@ -32,14 +32,14 @@ class tachesController extends Controller
     }
 
     /**
-     * Creates a new tach entity.
+     * Creates a new taches entity.
      *
      * @Route("/new", name="taches_new")
      * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
     {
-        $tach = new Tach();
+        $tach = new taches();
         $form = $this->createForm('AppBundle\Form\tachesType', $tach);
         $form->handleRequest($request);
 
