@@ -44,9 +44,9 @@ class projets
     private $chef;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="dateFin", type="datetime")
+     * @ORM\Column(name="dateFin", type="string", length=255)
      */
     private $dateFin;
 
@@ -143,7 +143,7 @@ class projets
     /**
      * Set dateFin
      *
-     * @param \DateTime $dateFin
+     * @param string $dateFin
      *
      * @return projets
      */
@@ -157,7 +157,7 @@ class projets
     /**
      * Get dateFin
      *
-     * @return \DateTime
+     * @return string
      */
     public function getDateFin()
     {
