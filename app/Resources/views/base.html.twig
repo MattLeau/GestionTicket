@@ -10,14 +10,15 @@
     <body>
         <ul>
             <li>
-                <a href="projets">Projet</a>
+                <a href="{{ path('projets_index') }}">Projet</a>
             </li>
             <li>
-                <a href="taches">Taches</a>
+                <a href="{{ path('taches_index') }}">Taches</a>
             </li>
-            <li><a href="user">User</a></li>
+            <li><a href="{{ path('user_index') }}">User</a></li>
         </ul>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+
     </body>
 </html>
