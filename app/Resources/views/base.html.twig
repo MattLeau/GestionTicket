@@ -1,36 +1,35 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="../../../css/bootstrap.min.css">
-        <link rel="stylesheet" href="../../../css/style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    </head>
-    <body>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}{% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+<ul>
+    <li>
+        <a href="{{ path('projets_index') }}">Projet</a>
+    </li>
+    <li>
+        <a href="{{ path('taches_index') }}">Taches</a>
+    </li>
+    <li><a href="{{ path('user_index') }}">User</a>
+        <ul>
+            <li><a href="{{ path('user_index') }}">Voir tous les utilisateurs</a> </li>
+            <li><a href="{{ path('user_new') }}">Ajouter un utilisateur</a></li>
+            <li><a href="{{ path('user_matthieu') }}">Montrer les Matthieu</a></li>
+        </ul>
 
-    <div class="container silver">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    </li>
 
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('projets_index') }}">Projet</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('projets_index') }}">Taches</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ path('projets_index') }}">User</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-    </body>
+
+    <li><a href={{ path('homepage',{'_locale':'fr'}) }}>Francais</a></li>
+    <li><a href={{ path('homepage',{'_locale':'en'}) }}>Anglais</a></li>
+</ul>
+{% block body %}{% endblock %}
+{% block javascripts %}{% endblock %}
+
+</body>
 </html>

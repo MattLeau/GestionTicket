@@ -58,6 +58,25 @@ class userController extends Controller
     }
 
     /**
+     * @Route("/showMatthieu", name="user_matthieu")
+     * @method("POST")
+     */
+
+    public function showMatthieu()
+    {
+
+
+        $repository = $this
+            ->getDoctrine()
+            ->getRepository(user::class)
+        ;
+        $user = $repository->findBy( ['prenom' => $_POST['nom']]);
+        print_r($user);
+        return $this->render('user/showMatthieu.html.twig', array('user' => $user));
+    }
+
+
+    /**
      * Finds and displays a user entity.
      *
      * @Route("/{id}", name="user_show")
