@@ -32,6 +32,24 @@ class userController extends Controller
     }
 
     /**
+     * @Route("/showMatthieu", name="user_matthieu")
+     * @method("POST")
+     */
+
+    public function showMatthieu()
+    {
+
+
+        $repository = $this
+            ->getDoctrine()
+            ->getRepository(user::class)
+        ;
+        $user = $repository->findBy( ['prenom' => $_POST['nom']]);
+        print_r($user);
+        return $this->render('user/showMatthieu.html.twig', array('user' => $user));
+    }
+
+    /**
      * Creates a new user entity.
      *
      * @Route("/new", name="user_new")
@@ -57,23 +75,6 @@ class userController extends Controller
         ));
     }
 
-    /**
-     * @Route("/showMatthieu", name="user_matthieu")
-     * @method("POST")
-     */
-
-    public function showMatthieu()
-    {
-
-
-        $repository = $this
-            ->getDoctrine()
-            ->getRepository(user::class)
-        ;
-        $user = $repository->findBy( ['prenom' => $_POST['nom']]);
-        print_r($user);
-        return $this->render('user/showMatthieu.html.twig', array('user' => $user));
-    }
 
 
     /**
