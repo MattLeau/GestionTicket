@@ -31,7 +31,21 @@ class tachesController extends Controller
         ));
     }
 
+    /**
+     * @Route("/showTacheProjet", name="taches_tachesProjet")
+     * @method("POST")
+     */
 
+    public function showTachesProjet()
+    {
+        $repository = $this
+            ->getDoctrine()
+            ->getRepository(taches::class)
+        ;
+        $resultat = $repository->findBy( ['projet' => $_POST['projet']]);
+        print_r($resultat);
+        return $this->render('taches/showTachesProjet.html.twig', array('taches' => $resultat));
+    }
 
 
 

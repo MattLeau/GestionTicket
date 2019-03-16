@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if taches %}
+    <h1>Voici les taches pourle projet " {{ taches[0].projet }} "</h1>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Evolution</th>
+                <th>Affectation</th>
+                <th>Description</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for valeur in taches %}
+                <tr>
+                    <td>{{ valeur.id }}</td>
+                    <td>{{ valeur.evolution }}</td>
+                    <td>{{ valeur.affectation }}</td>
+                    <td>{{ valeur.description }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Il n'y a pas de personne ayant ce métier dans l'entreprise</p>
+    {% endif %}
+    <a href="{{ path('taches_index') }}">Retour à l'index des taches</a>
+{% endblock %}
