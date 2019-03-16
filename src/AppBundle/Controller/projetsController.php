@@ -120,7 +120,7 @@ class projetsController extends Controller
     /**
      * Deletes a projet entity.
      *
-     * @Route("/{id}", name="projets_delete")
+     * @Route("/{id}/delete", name="projets_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, projets $projet)
