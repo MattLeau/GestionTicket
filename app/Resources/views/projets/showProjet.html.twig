@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if proj %}
+        <table border="1">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom du projet</th>
+                <th>Entreprise</th>
+                <th>Chef de projet</th>
+                <th>Date de début du projet</th>
+                <th>Date de fin du projet</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for valeur in proj %}
+                <tr>
+                    <td>{{ valeur.id }}</td>
+                    <td>{{ valeur.nomProjet }}</td>
+                    <td>{{ valeur.entreprise }}</td>
+                    <td>{{ valeur.chef }}</td>
+                    <td>{{ valeur.dateDebut }}</td>
+                    <td>{{ valeur.dateFin }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Le projet demandé n'existe pas</p>
+    {% endif %}
+    <a href="{{ path('projets_index') }}">Retour à l'index des projets</a>
+{% endblock %}

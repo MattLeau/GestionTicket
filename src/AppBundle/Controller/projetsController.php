@@ -32,6 +32,25 @@ class projetsController extends Controller
     }
 
     /**
+     * @Route("/showProjet", name="projet_nom")
+     * @method("POST")
+     */
+
+    public function showNomProjet()
+    {
+        $repository = $this
+            ->getDoctrine()
+            ->getRepository(projets::class)
+        ;
+        $projet = $repository->findBy( ['nomProjet' => $_POST['nom']]);
+        print_r($projet);
+        return $this->render('projets/showProjet.html.twig', array('proj' => $projet));
+    }
+
+
+
+
+    /**
      * Creates a new projet entity.
      *
      * @Route("/new", name="projets_new")

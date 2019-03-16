@@ -7,12 +7,8 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nomprojet</th>
+                <th>Nom projet</th>
                 <th>Entreprise</th>
-                <th>Chef</th>
-                <th>Datefin</th>
-                <th>Datedebut</th>
-                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,9 +17,6 @@
                 <td><a href="{{ path('projets_show', { 'id': projet.id }) }}">{{ projet.id }}</a></td>
                 <td>{{ projet.nomProjet }}</td>
                 <td>{{ projet.entreprise }}</td>
-                <td>{{ projet.chef }}</td>
-                <td>{% if projet.dateFin %}{{ projet.dateFin|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ projet.dateDebut }}</td>
                 <td>
                     <ul>
                         <li>
@@ -38,7 +31,9 @@
         {% endfor %}
         </tbody>
     </table>
-
+    <form method="post" action="{{ path('projet_nom') }}">
+        <p>Créer un filtre : <input type="text" name="nom" /><input type="submit" value="Envoyer" /></p>
+    </form>
     <ul>
         <li>
             <a href="{{ path('projets_new') }}">Create a new projet</a>
