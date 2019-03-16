@@ -10,9 +10,6 @@
             <th>Nom</th>
             <th>Prenom</th>
             <th>Role</th>
-            <th>Idemploye</th>
-            <th>Mdp</th>
-            <th>Username</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -23,16 +20,13 @@
                 <td>{{ user.nom }}</td>
                 <td>{{ user.prenom }}</td>
                 <td>{{ user.role }}</td>
-                <td>{{ user.idEmploye }}</td>
-                <td>{{ user.mdp }}</td>
-                <td>{{ user.userName }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
+                            <a href="{{ path('user_show', { 'id': user.id }) }}">Voir plus</a>
                         </li>
                         <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
+                            <a href="{{ path('user_edit', { 'id': user.id }) }}">Modfier</a>
                         </li>
                     </ul>
                 </td>
@@ -40,8 +34,8 @@
         {% endfor %}
         </tbody>
     </table>
-    <form method="post" action="{{ path('user_matthieu') }}">
-        <p>Créer un filtre : <input type="text" name="nom" /><input type="submit" value="Envoyer" /></p>
+    <form method="post" action="{{ path('user_metier') }}">
+        <p>Créer un filtre : <input type="text" name="metier" /><input type="submit" value="Envoyer" /></p>
     </form>
 
     <ul>

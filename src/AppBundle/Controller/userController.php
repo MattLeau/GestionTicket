@@ -32,21 +32,19 @@ class userController extends Controller
     }
 
     /**
-     * @Route("/showMatthieu", name="user_matthieu")
+     * @Route("/showMetier", name="user_metier")
      * @method("POST")
      */
 
-    public function showMatthieu()
+    public function showMetier()
     {
-
-
         $repository = $this
             ->getDoctrine()
             ->getRepository(user::class)
         ;
-        $user = $repository->findBy( ['prenom' => $_POST['nom']]);
+        $user = $repository->findBy( ['role' => $_POST['metier']]);
         print_r($user);
-        return $this->render('user/showMatthieu.html.twig', array('user' => $user));
+        return $this->render('user/showMetier.html.twig', array('user' => $user));
     }
 
     /**
