@@ -120,7 +120,7 @@ class tachesController extends Controller
     /**
      * Deletes a tach entity.
      *
-     * @Route("/{id}", name="taches_delete")
+     * @Route("/{id}/taches", name="taches_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, taches $tach)
