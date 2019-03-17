@@ -47,13 +47,7 @@ class user
      *
      * @ORM\Column(name="idEmploye", type="integer", unique=true)
      */
-    private $idEmploye;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="mdp", type="string", length=255)
-     */
     private $mdp;
 
     /**
@@ -146,29 +140,6 @@ class user
         return $this->role;
     }
 
-    /**
-     * Set idEmploye
-     *
-     * @param integer $idEmploye
-     *
-     * @return user
-     */
-    public function setIdEmploye($idEmploye)
-    {
-        $this->idEmploye = $idEmploye;
-
-        return $this;
-    }
-
-    /**
-     * Get idEmploye
-     *
-     * @return int
-     */
-    public function getIdEmploye()
-    {
-        return $this->idEmploye;
-    }
 
     /**
      * Set mdp

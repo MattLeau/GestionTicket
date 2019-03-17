@@ -2,6 +2,7 @@
 
 namespace AppBundle\DataFixtures;
 
+use AppBundle\Entity\projets;
 use AppBundle\Entity\user;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -16,7 +17,7 @@ class AppFixtures extends Fixture
                 $utilisateur->setNom('RENARD-'.$i);
                 $utilisateur->setPrenom('Antoine-'.$i);
 
-                $utilisateur->setIdEmploye(60+$i);
+
                 $utilisateur->setRole("Directeur");
                 $utilisateur->setUserName("Loup-".$i);
                 $utilisateur->setMdp("DevWeb");
@@ -33,7 +34,7 @@ class AppFixtures extends Fixture
             $utilisateur->setNom('MESNAGE-'.$i);
             $utilisateur->setPrenom('Matthieu-'.$i);
 
-            $utilisateur->setIdEmploye(70+$i);
+
             $utilisateur->setRole("Developpeur");
             $utilisateur->setUserName("Matelot-".$i);
             $utilisateur->setMdp("Python");
@@ -43,6 +44,34 @@ class AppFixtures extends Fixture
 
             $utilisateursDeveloppeur[] = $utilisateur;
         }
+
+        $projet = new projets();
+        $projet->setNomProjet("Construire un pont");
+        $projet->setEntreprise("Veolia");
+        $projet->setChef("RENARD-1");
+        $projet->setDateDebut("15/05/2018");
+        $projet->setDateFin("30/08/2019");
+        $manager->persist($projet);
+        $manager->flush();
+
+        $projet = new projets();
+        $projet->setNomProjet("Réparer la porte du musée");
+        $projet->setEntreprise("Etat");
+        $projet->setChef("RENARD-2");
+        $projet->setDateDebut("18/08/2018");
+        $projet->setDateFin("15/09/2019");
+        $manager->persist($projet);
+        $manager->flush();
+
+        $projet = new projets();
+        $projet->setNomProjet("Construire le magasin");
+        $projet->setEntreprise("Carrefour");
+        $projet->setChef("RENARD-3");
+        $projet->setDateDebut("02/04/2018");
+        $projet->setDateFin("03/07/2019");
+        $manager->persist($projet);
+        $manager->flush();
+
 
     }
 }
