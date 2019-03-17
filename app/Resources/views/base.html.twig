@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+
 <html>
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -9,13 +11,19 @@
 </head>
 <body>
 <ul>
-    <li>
-        <a href="{{ path('projets_index') }}">Projet</a>
+    <li>Projet
+        <ul>
+            <li><a href="{{ path('projets_index') }}">Voir tous les projets</a></li>
+            <li><a href="{{ path('projets_new') }}">Créer un projet</a></li>
+        </ul>
     </li>
-    <li>
-        <a href="{{ path('taches_index') }}">Taches</a>
+    <li>Taches
+        <ul>
+            <li><a href="{{ path('taches_index') }}">Voir toutes les taches</a></li>
+            <li><a href="{{ path('taches_new') }}">Créer une tache</a></li>
+        </ul>
     </li>
-    <li><a href="{{ path('user_index') }}">User</a>
+    <li> Utilisateurs
         <ul>
             <li><a href="{{ path('user_index') }}">Voir tous les utilisateurs</a> </li>
             <li><a href="{{ path('user_new') }}">Ajouter un utilisateur</a></li>
