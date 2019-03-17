@@ -3,6 +3,7 @@
 namespace AppBundle\DataFixtures;
 
 use AppBundle\Entity\projets;
+use AppBundle\Entity\taches;
 use AppBundle\Entity\user;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -45,6 +46,7 @@ class AppFixtures extends Fixture
             $utilisateursDeveloppeur[] = $utilisateur;
         }
 
+        $projets = [];
         $projet = new projets();
         $projet->setNomProjet("Construire un pont");
         $projet->setEntreprise("Veolia");
@@ -53,6 +55,8 @@ class AppFixtures extends Fixture
         $projet->setDateFin("30/08/2019");
         $manager->persist($projet);
         $manager->flush();
+
+        $projets = $projet;
 
         $projet = new projets();
         $projet->setNomProjet("Réparer la porte du musée");
@@ -63,6 +67,8 @@ class AppFixtures extends Fixture
         $manager->persist($projet);
         $manager->flush();
 
+        $projets = $projet;
+
         $projet = new projets();
         $projet->setNomProjet("Construire le magasin");
         $projet->setEntreprise("Carrefour");
@@ -72,6 +78,16 @@ class AppFixtures extends Fixture
         $manager->persist($projet);
         $manager->flush();
 
+        $projets = $projet;
+
+
+        $tache = new taches();
+        $tache->setProjet("Construire le magasin");
+        $tache->setEvolution("Fini");
+        $tache->setDescription("Créer la cahier des charges");
+        $tache->setAffectation(3);
+        $manager->persist($tache);
+        $manager->flush();
 
     }
 }
