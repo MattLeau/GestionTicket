@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\taches;
+use AppBundle\Entity\user;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -47,14 +48,64 @@ class tachesController extends Controller
         return $this->render('taches/showTachesProjet.html.twig', array('taches' => $resultat));
     }
 
+    /**
+     * @Route("/statsTaches", name="taches_stats")
+     * @method("POST")
+     */
+
     public function StatsTaches()
     {
-        $qb = $entityManager->createQueryBuilder();
-        $qb->select('count(account.id)');
-        $qb->from('ZaysoCoreBundle:Account','account');
+        $repository = $this->getDoctrine()
+            ->getRepository(user::class);
 
-        $count = $qb->getQuery()->getSingleScalarResult();
+        $query = $repository->createQueryBuilder('p')
+            ->select('count(p)')
+            ->where('p.nom = :nom')
+            ->setParameter('nom', 'MESNAGE-1')
+            ->getQuery();
+
+        $products = $query->setMaxResults(1)->getOneOrNullResult();
+
+        print_r($products);
+        return $this->render('taches/showStatsTaches.html.twig',array('tab' => $products[1]));
+
+
+        /*
+        $qb = $em->createQueryBuilder();
+
+        $qb->select('u')
+            ->from('user', 'u')
+            ->where('u.id = 1');
+
+        return $this->render('taches/showStatsTaches.html.twig',array('tab' => $qb));
+    */
+        /*
+                $repository = $this
+                    ->getDoctrine()
+                    ->getRepository(user::class)
+                ;
+                $resultat =  $repository->createQueryBuilder('u')
+                    ->select('count(u.id)')
+                    ->getQuery()
+                    ->getSingleScalarResult();
+                return $this->render('taches/showStatsTaches.html.twig',array('tab' => $resultat));
+        */
+        /*
+        ->where('u.nom = :MESNAGE-1')
+        $em = $this->getDoctrine()->getManager();
+
+        $RAW_QUERY = 'SELECT * FROM user;';
+
+        $statement = $em->getConnection()->preprare($RAW_QUERY);
+        $statement->execute();
+
+        $result = $statement->fetchAll();
+
+        return $this->render('taches/showStatsTaches.html.twig',array('tab' => $result));
+        */
     }
+
+
 
 
     /**
