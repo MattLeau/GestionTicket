@@ -85,7 +85,7 @@ class AppFixtures extends Fixture
         $tache->setProjet("Construire le magasin");
         $tache->setEvolution("Fini");
         $tache->setDescription("Créer la cahier des charges");
-        $tache->setAffectation(3);
+        $tache->setAffectation("Matthieu-1");
         $manager->persist($tache);
         $manager->flush();
 

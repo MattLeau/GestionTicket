@@ -1,6 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    {{ tab }}
-    <p>Bonjour</p>
+    <h1>Statistiques sur les utilisateurs</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Utilisateur</th>
+                <th>Nombre de tache affecté</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {% for valeur in resultat %}
+            <tr>
+                <th>{{ valeur.affectation }}</th>
+                <th>{{ valeur[1] }}</th>
+            </tr>
+        </tbody>
+
+    {% endfor %}
+    </table>
 {% endblock %}

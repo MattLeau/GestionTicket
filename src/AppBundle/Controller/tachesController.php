@@ -37,7 +37,7 @@ class tachesController extends Controller
      * @method("POST")
      */
 
-    public function showTachesProjet()
+    public function showTachesProjetAction()
     {
         $repository = $this
             ->getDoctrine()
@@ -53,21 +53,20 @@ class tachesController extends Controller
      * @method("POST")
      */
 
-    public function StatsTaches()
+    public function StatsTachesAction()
     {
         $repository = $this->getDoctrine()
-            ->getRepository(user::class);
+            ->getRepository(taches::class);
 
         $query = $repository->createQueryBuilder('p')
-            ->select('count(p)')
-            ->where('p.nom = :nom')
-            ->setParameter('nom', 'MESNAGE-1')
+            ->select('count(p), p.affectation')
+            ->groupBy('p.affectation')
             ->getQuery();
 
-        $products = $query->setMaxResults(1)->getOneOrNullResult();
-
+        #$products = $query->setMaxResults(1)->getOneOrNullResult();
+        $products = $query->execute();
         print_r($products);
-        return $this->render('taches/showStatsTaches.html.twig',array('tab' => $products[1]));
+        return $this->render('taches/showStatsTaches.html.twig',array('resultat' => $products));
 
 
         /*

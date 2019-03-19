@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\taches;
 use AppBundle\Entity\user;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -48,6 +49,28 @@ class userController extends Controller
     }
 
     /**
+     * @Route("/statsUsers", name="user_stats")
+     * @method("POST")
+     */
+
+    public function StatsTachesAffectationAction()
+    {
+        $repository = $this->getDoctrine()
+            ->getRepository(taches::class);
+
+        $query = $repository->createQueryBuilder('p')
+            ->select('count(p), p.affectation')
+            ->groupBy('p.affectation')
+            ->getQuery();
+
+        #$products = $query->setMaxResults(1)->getOneOrNullResult();
+        $products = $query->execute();
+        print_r($products);
+        return $this->render('taches/showStatsTaches.html.twig', array('resultat' => $products));
+    }
+
+
+        /**
      * Creates a new user entity.
      *
      * @Route("/new", name="user_new")
