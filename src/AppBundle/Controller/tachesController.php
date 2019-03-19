@@ -59,8 +59,8 @@ class tachesController extends Controller
             ->getRepository(taches::class);
 
         $query = $repository->createQueryBuilder('p')
-            ->select('count(p), p.affectation')
-            ->groupBy('p.affectation')
+            ->select('count(p), p.evolution')
+            ->groupBy('p.evolution')
             ->getQuery();
 
         #$products = $query->setMaxResults(1)->getOneOrNullResult();

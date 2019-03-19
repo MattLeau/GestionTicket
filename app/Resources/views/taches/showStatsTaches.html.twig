@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Statistiques sur les utilisateurs</h1>
+    <h1>Statistiques sur l'évolution des taches</h1>
     <table border="1">
         <thead>
             <tr>
-                <th>Utilisateur</th>
-                <th>Nombre de tache affecté</th>
+                <th>Etat de la tache</th>
+                <th>Nombre de tache à cette évolution</th>
             </tr>
         </thead>
 
         <tbody>
             {% for valeur in resultat %}
             <tr>
-                <th>{{ valeur.affectation }}</th>
+                <th>{{ valeur.evolution }}</th>
                 <th>{{ valeur[1] }}</th>
             </tr>
         </tbody>

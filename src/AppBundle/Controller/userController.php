@@ -66,7 +66,7 @@ class userController extends Controller
         #$products = $query->setMaxResults(1)->getOneOrNullResult();
         $products = $query->execute();
         print_r($products);
-        return $this->render('taches/showStatsTaches.html.twig', array('resultat' => $products));
+        return $this->render('user/showStatsUser.html.twig', array('resultat' => $products));
     }
 
 
@@ -87,7 +87,7 @@ class userController extends Controller
             $em->persist($user);
             $em->flush();
 
-            return $this->redirectToRoute('user_show', array('id' => $user->getId()));
+            return $this->redirectToRoute('user/showStatsUser.html.twig', array('id' => $user->getId()));
         }
 
         return $this->render('user/new.html.twig', array(
