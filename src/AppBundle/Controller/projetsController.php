@@ -42,7 +42,7 @@ class projetsController extends Controller
             ->getDoctrine()
             ->getRepository(projets::class)
         ;
-        $projet = $repository->findBy( ['chef' => $_POST['nom']]);
+        $projet = $repository->findBy( ['chef'=> $_POST['nom']]);
         print_r($projet);
         return $this->render('projets/showProjet.html.twig', array('proj' => $projet));
     }

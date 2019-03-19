@@ -43,10 +43,10 @@ class user
     private $role;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="idEmploye", type="integer", unique=true)
-     */
+     * @ORM\Column(name="mdp", type="string", unique=false)
+     **/
 
     private $mdp;
 
