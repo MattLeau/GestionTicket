@@ -47,7 +47,14 @@ class tachesController extends Controller
         return $this->render('taches/showTachesProjet.html.twig', array('taches' => $resultat));
     }
 
+    public function StatsTaches()
+    {
+        $qb = $entityManager->createQueryBuilder();
+        $qb->select('count(account.id)');
+        $qb->from('ZaysoCoreBundle:Account','account');
 
+        $count = $qb->getQuery()->getSingleScalarResult();
+    }
 
 
     /**

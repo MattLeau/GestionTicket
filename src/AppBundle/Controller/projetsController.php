@@ -36,7 +36,7 @@ class projetsController extends Controller
      * @method("POST")
      */
 
-    public function showNomProjet()
+    public function showNomProjetAction()
     {
         $repository = $this
             ->getDoctrine()
