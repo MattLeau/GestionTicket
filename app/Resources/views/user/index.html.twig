@@ -7,8 +7,8 @@
         <thead>
         <tr>
             <th>Id</th>
-            <th>Nom</th>
-            <th>Prenom</th>
+            <th>Nom d'utilisateur</th>
+            <th>Email</th>
             <th>Role</th>
             <th>Actions</th>
         </tr>
@@ -17,9 +17,9 @@
         {% for user in users %}
             <tr>
                 <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                <td>{{ user.nom }}</td>
-                <td>{{ user.prenom }}</td>
-                <td>{{ user.role }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.roles[0] }}</td>
                 <td>
                     <ul>
                         <li>
@@ -35,7 +35,7 @@
         </tbody>
     </table>
     <form method="post" action="{{ path('user_metier') }}">
-        <p>Créer un filtre : <input type="text" name="metier" value="Metier recherché"/><input type="submit" value="Envoyer" /></p>
+        <p>Créer un filtre : <input type="text" name="metier" value="Metier recherché" /><input type="submit" value="Envoyer" /></p>
     </form>
 
     <ul>

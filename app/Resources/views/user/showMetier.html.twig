@@ -2,21 +2,21 @@
 
 {% block body %}
     {% if user %}
-    <h1>Voici les "{{ user[0].role }}" de l'entreprise</h1>
+    <h1>Voici les "{{ user.roles[0] }}" de l'entreprise</h1>
         <table border="1">
             <thead>
             <tr>
                 <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
+                <th>Nom d'utilisateur</th>
+                <th>Email</th>
             </tr>
             </thead>
             <tbody>
             {% for valeur in user %}
                 <tr>
                     <td>{{ valeur.id }}</td>
-                    <td>{{ valeur.nom }}</td>
-                    <td>{{ valeur.prenom }}</td>
+                    <td>{{ valeur.username }}</td>
+                    <td>{{ valeur.email }}</td>
                 </tr>
             {% endfor %}
             </tbody>

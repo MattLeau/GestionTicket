@@ -15,11 +15,12 @@ class AppFixtures extends Fixture
             $utilisateursDirecteur = [];
             for ($i=0; $i<3; $i++) {
                 $utilisateur = new user();
-                $utilisateur->setNom('RENARD-'.$i);
-                $utilisateur->setPrenom('Antoine-'.$i);
-                $utilisateur->setRole("Directeur");
-                $utilisateur->setUserName("Loup-".$i);
-                $utilisateur->setMdp("DevWeb");
+                $role = "Directeur";
+                $utilisateur->setUsername("Loup-".$i);
+                $utilisateur->setEmail("Email".$i);
+                $utilisateur->setPassword("password".$i);
+                $utilisateur->setRoles([$role]);
+
                 $manager->persist($utilisateur);
                 $manager->flush();
 
@@ -27,13 +28,14 @@ class AppFixtures extends Fixture
             }
 
         $utilisateursDeveloppeur = [];
-        for ($i=0; $i<10; $i++) {
+        for ($i=3; $i<13; $i++) {
+            $role = "Developpeur";
             $utilisateur = new user();
-            $utilisateur->setNom('MESNAGE-'.$i);
-            $utilisateur->setPrenom('Matthieu-'.$i);
-            $utilisateur->setRole("Developpeur");
-            $utilisateur->setUserName("Matelot-".$i);
-            $utilisateur->setMdp("Python");
+            $utilisateur->setUsername("Loup-".$i);
+            $utilisateur->setEmail("Email".$i);
+            $utilisateur->setPassword("password".$i);
+            $utilisateur->setRoles([$role]);
+
             $manager->persist($utilisateur);
             $manager->flush();
 

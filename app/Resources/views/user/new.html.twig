@@ -1,16 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends "@FOSUser/layout.html.twig" %}
 
-{% block body %}
-    <h1>User creation</h1>
+{% trans_default_domain 'FOSUserBundle' %}
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+  {% block fos_user_content %}
+      {% include "@FOSUser/Registration/register_content.html.twig" %}
+      {% block body %}
+          <ul>
+              <li>
+                  <a href="{{ path('user_index') }}">Back to the list</a>
+              </li>
+          </ul>
+      {% endblock %}
+  {% endblock fos_user_content %}
 
-    <ul>
-        <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
-        </li>
-    </ul>
-{% endblock %}
