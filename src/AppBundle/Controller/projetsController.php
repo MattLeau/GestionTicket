@@ -26,23 +26,35 @@ class projetsController extends Controller
 
         $projets = $em->getRepository('AppBundle:projets')->findAll();
 
+        $repository = $this->getDoctrine()
+            ->getRepository(projets::class);
+
+        $query = $repository->createQueryBuilder('p')
+            ->select('distinct p.chef')
+            ->getQuery();
+
+        $products = $query->execute();
+
+        print_r($products);
+
         return $this->render('projets/index.html.twig', array(
-            'projets' => $projets,
+            'projets' => $projets,'resultat' => $products
         ));
     }
+
 
     /**
      * @Route("/showProjet", name="projet_nom")
      * @method("POST")
      */
 
-    public function showNomProjet()
+    public function showNomProjetAction()
     {
         $repository = $this
             ->getDoctrine()
             ->getRepository(projets::class)
         ;
-        $projet = $repository->findBy( ['chef' => $_POST['nom']]);
+        $projet = $repository->findBy( ['chef'=> $_POST['choixChef']]);
         print_r($projet);
         return $this->render('projets/showProjet.html.twig', array('proj' => $projet));
     }

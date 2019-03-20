@@ -36,9 +36,9 @@ class taches
     private $evolution;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="affectation", type="integer", unique=true)
+     * @ORM\Column(name="affectation", type="string", unique=false)
      */
     private $affectation;
 
