@@ -17,12 +17,9 @@ class AppFixtures extends Fixture
                 $utilisateur = new user();
                 $utilisateur->setNom('RENARD-'.$i);
                 $utilisateur->setPrenom('Antoine-'.$i);
-
-
                 $utilisateur->setRole("Directeur");
                 $utilisateur->setUserName("Loup-".$i);
                 $utilisateur->setMdp("DevWeb");
-
                 $manager->persist($utilisateur);
                 $manager->flush();
 
@@ -34,12 +31,9 @@ class AppFixtures extends Fixture
             $utilisateur = new user();
             $utilisateur->setNom('MESNAGE-'.$i);
             $utilisateur->setPrenom('Matthieu-'.$i);
-
-
             $utilisateur->setRole("Developpeur");
             $utilisateur->setUserName("Matelot-".$i);
             $utilisateur->setMdp("Python");
-
             $manager->persist($utilisateur);
             $manager->flush();
 

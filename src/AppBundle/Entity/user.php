@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\userRepository")
  */
-class user
+class user extends BaseUser
 {
     /**
      * @var int
@@ -19,7 +20,7 @@ class user
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    protected $id;
 
     /**
      * @var string
@@ -43,9 +44,9 @@ class user
     private $role;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="idEmploye", type="integer", unique=true)
+     * @ORM\Column(name="mdp", type="string", unique=false)
      */
 
     private $mdp;
@@ -57,7 +58,11 @@ class user
      */
     private $userName;
 
-
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
+    }
     /**
      * Get id
      *
