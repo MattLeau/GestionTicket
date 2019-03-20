@@ -35,6 +35,9 @@ framework:
 twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+# app/config/config.yml
+
+
 
 # Doctrine Configuration
 doctrine:

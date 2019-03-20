@@ -37,7 +37,7 @@ class userController extends Controller
      * @method("POST")
      */
 
-    public function showMetier()
+    public function showMetierAction()
     {
         $repository = $this
             ->getDoctrine()

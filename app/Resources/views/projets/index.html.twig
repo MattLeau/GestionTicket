@@ -32,7 +32,12 @@
         </tbody>
     </table>
     <form method="post" action="{{ path('projet_nom') }}">
-        <p>Créer un filtre : <input type="text" name="nom" value="Nom du chef de projet" /><input type="submit" value="Envoyer" /></p>
+        <select name="choixChef" size="1">
+            {% for i in projets %}
+                <option>{{ i.chef }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Rechercher" />
     </form>
 
     <ul>
