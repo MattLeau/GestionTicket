@@ -26,19 +26,11 @@ class projetsController extends Controller
 
         $projets = $em->getRepository('AppBundle:projets')->findAll();
 
-        $repository = $this->getDoctrine()
-            ->getRepository(projets::class);
+        $chef = $em->getRepository('AppBundle:user')->findBy(['role' => 'Directeur']);
 
-        $query = $repository->createQueryBuilder('p')
-            ->select('distinct p.chef')
-            ->getQuery();
-
-        $products = $query->execute();
-
-        print_r($products);
 
         return $this->render('projets/index.html.twig', array(
-            'projets' => $projets,'resultat' => $products
+            'projets' => $projets,'resultat' => $chef
         ));
     }
 

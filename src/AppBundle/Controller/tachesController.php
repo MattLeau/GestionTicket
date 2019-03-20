@@ -27,8 +27,19 @@ class tachesController extends Controller
 
         $taches = $em->getRepository('AppBundle:taches')->findAll();
 
+
+
+        $repository = $this->getDoctrine()
+            ->getRepository(taches::class);
+
+        $query = $repository->createQueryBuilder('p')
+            ->select('distinct p.evolution')
+            ->getQuery();
+
+        $products = $query->execute();
+
         return $this->render('taches/index.html.twig', array(
-            'taches' => $taches,
+            'taches' => $taches, 'resultat' => $products
         ));
     }
 
@@ -63,7 +74,6 @@ class tachesController extends Controller
             ->groupBy('p.evolution')
             ->getQuery();
 
-        #$products = $query->setMaxResults(1)->getOneOrNullResult();
         $products = $query->execute();
         print_r($products);
         return $this->render('taches/showStatsTaches.html.twig',array('resultat' => $products));

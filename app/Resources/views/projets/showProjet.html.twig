@@ -2,13 +2,13 @@
 
 {% block body %}
     {% if proj %}
+        <h1>Voici les projects dont {{ proj[0].chef }} est le directeur</h1>
         <table border="1">
             <thead>
             <tr>
                 <th>Id</th>
                 <th>Nom du projet</th>
                 <th>Entreprise</th>
-                <th>Chef de projet</th>
                 <th>Date de début du projet</th>
                 <th>Date de fin du projet</th>
             </tr>
@@ -19,7 +19,6 @@
                     <td>{{ valeur.id }}</td>
                     <td>{{ valeur.nomProjet }}</td>
                     <td>{{ valeur.entreprise }}</td>
-                    <td>{{ valeur.chef }}</td>
                     <td>{{ valeur.dateDebut }}</td>
                     <td>{{ valeur.dateFin }}</td>
                 </tr>
@@ -27,7 +26,8 @@
             </tbody>
         </table>
     {% else %}
-        <p>Le projet demandé n'existe pas</p>
+        <p>Ce directeur n'a pas de projet en cours</p>
     {% endif %}
+
     <a href="{{ path('projets_index') }}">Retour à l'index des projets</a>
 {% endblock %}
