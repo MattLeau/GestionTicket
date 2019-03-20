@@ -11,27 +11,19 @@
             </tr>
             <tr>
                 <th>Nom</th>
-                <td>{{ user.nom }}</td>
+                <td>{{ user.username }}</td>
             </tr>
             <tr>
                 <th>Prenom</th>
-                <td>{{ user.prenom }}</td>
+                <td>{{ user.email }}</td>
             </tr>
             <tr>
                 <th>Role</th>
-                <td>{{ user.role }}</td>
-            </tr>
-            <tr>
-                <th>Idemploye</th>
-                <td>{{ user.idEmploye }}</td>
+                <td>{{ user.roles[0] }}</td>
             </tr>
             <tr>
                 <th>Mdp</th>
-                <td>{{ user.mdp }}</td>
-            </tr>
-            <tr>
-                <th>Username</th>
-                <td>{{ user.userName }}</td>
+                <td>{{ user.password }}</td>
             </tr>
         </tbody>
     </table>

@@ -7,14 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class userType extends AbstractType
-{
-    /**
-     * {@inheritdoc}
-     */
-    public function buildForm(FormBuilderInterface $builder, array $options)
-    {
-        $builder->add('nom')->add('prenom')->add('role')->add('mdp')->add('userName');
-    }/**
+{/**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
