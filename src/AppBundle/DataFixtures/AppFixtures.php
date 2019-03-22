@@ -20,7 +20,8 @@ class AppFixtures extends Fixture
                 $utilisateur->setEmail("Email".$i);
                 $utilisateur->setPassword("password".$i);
                 $utilisateur->setRoles([$role]);
-
+                $utilisateur->setEnabled(1);
+                $utilisateur->setMetier('Directeur');
                 $manager->persist($utilisateur);
                 $manager->flush();
 
@@ -35,6 +36,7 @@ class AppFixtures extends Fixture
             $utilisateur->setEmail("Email".$i);
             $utilisateur->setPassword("password".$i);
             $utilisateur->setRoles([$role]);
+            $utilisateur->setMetier('Developpeur');
 
             $manager->persist($utilisateur);
             $manager->flush();

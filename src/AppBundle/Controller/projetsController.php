@@ -26,8 +26,9 @@ class projetsController extends Controller
 
         $projets = $em->getRepository('AppBundle:projets')->findAll();
 
-        $chef = $em->getRepository('AppBundle:user')->findBy(['role' => 'Directeur']);
+        $chef = $em->getRepository('AppBundle:user')->findBy(['metier' => 'Directeur ']);
 
+        print_r($chef);
 
         return $this->render('projets/index.html.twig', array(
             'projets' => $projets,'resultat' => $chef

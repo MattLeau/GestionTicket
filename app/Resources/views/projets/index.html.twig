@@ -34,7 +34,7 @@
     <form method="post" action="{{ path('projet_nom') }}">
         <select name="choixChef" size="1">
             {% for i in resultat %}
-                <option>{{ i.nom }}</option>
+                <option>{{ i.username }}</option>
             {% endfor %}
         </select>
         <input type="submit" value="Rechercher" />
