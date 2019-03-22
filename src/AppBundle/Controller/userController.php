@@ -44,7 +44,6 @@ class userController extends Controller
             ->getRepository(user::class)
         ;
         $user = $repository->findBy( ['role' => $_POST['metier']]);
-        print_r($user);
         return $this->render('user/showMetier.html.twig', array('user' => $user));
     }
 
@@ -63,9 +62,7 @@ class userController extends Controller
             ->groupBy('p.affectation')
             ->getQuery();
 
-        #$products = $query->setMaxResults(1)->getOneOrNullResult();
         $products = $query->execute();
-        print_r($products);
         return $this->render('user/showStatsUser.html.twig', array('resultat' => $products));
     }
 

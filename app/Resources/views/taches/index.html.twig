@@ -37,7 +37,15 @@
         </tbody>
     </table>
     <form method="post" action="{{ path('taches_tachesProjet') }}">
-        <p>Créer un filtre : <input type="text" name="projet" value="Evolution"/><input type="submit" value="Envoyer" /></p>
+        <p>Choix de l'évolution :</p>
+        <form method="post" action="{{ path('projet_nom') }}">
+            <select name="choixChef" size="1">
+                {% for i in resultat %}
+                    <option>{{ i.evolution }}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Rechercher" />
+        </form>
     </form>
     <ul>
         <li>

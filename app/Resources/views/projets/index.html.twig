@@ -33,8 +33,8 @@
     </table>
     <form method="post" action="{{ path('projet_nom') }}">
         <select name="choixChef" size="1">
-            {% for i in projets %}
-                <option>{{ i.chef }}</option>
+            {% for i in resultat %}
+                <option>{{ i.username }}</option>
             {% endfor %}
         </select>
         <input type="submit" value="Rechercher" />
