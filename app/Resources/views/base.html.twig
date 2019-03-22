@@ -5,31 +5,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
     <meta charset="UTF-8" />
-    <title>{% block title %}Welcome!{% endblock %}</title>
+    <title>{% block title %}Gestion Tickets{% endblock %}</title>
     {% block stylesheets %}{% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
+
+<li><a href="{{ path('user_new') }}">Connexion</a></li>
+
 <body>
 <ul>
     <li>Projet
         <ul>
             <li><a href="{{ path('projets_index') }}">Voir tous les projets</a></li>
-            <li><a href="{{ path('projets_new') }}">Créer un projet</a></li>
+            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
+                <li><a href="{{ path('projets_new') }}">Créer un projet</a></li>
+            {% endif %}
         </ul>
     </li>
     <li>Taches
         <ul>
             <li><a href="{{ path('taches_index') }}">Voir toutes les taches</a></li>
-            <li><a href="{{ path('taches_new') }}">Créer une tache</a></li>
-            <li><a href="{{ path('taches_stats') }}">Statistiques sur les taches</a> </li>
-
+            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
+                <li><a href="{{ path('taches_new') }}">Créer une tache</a></li>
+                <li><a href="{{ path('taches_stats') }}">Statistiques sur les taches</a> </li>
+            {% endif %}
         </ul>
     </li>
     <li> Utilisateurs
         <ul>
             <li><a href="{{ path('user_index') }}">Voir tous les utilisateurs</a> </li>
-            <li><a href="{{ path('user_new') }}">Ajouter un utilisateur</a></li>
-            <li><a href="{{ path('user_stats') }}">Statistiques sur les utilisateurs</a> </li>
+            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
+                <li><a href="{{ path('user_new') }}">Ajouter un utilisateur</a></li>
+                <li><a href="{{ path('user_stats') }}">Statistiques sur les utilisateurs</a> </li>
+            {% endif %}
         </ul>
 
     </li>
@@ -40,6 +48,7 @@
 </ul>
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
+{% block fos_user_content %}{% endblock %}
 
 </body>
 </html>
