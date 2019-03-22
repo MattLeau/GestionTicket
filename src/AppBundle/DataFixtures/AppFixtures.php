@@ -12,29 +12,30 @@ class AppFixtures extends Fixture
 {
     public function load(ObjectManager $manager)
     {
-            $utilisateursDirecteur = [];
-            for ($i=0; $i<3; $i++) {
-                $utilisateur = new user();
-                $role = "Directeur";
-                $utilisateur->setUsername("Loup-".$i);
-                $utilisateur->setEmail("Email".$i);
-                $utilisateur->setPassword("password".$i);
-                $utilisateur->setRoles([$role]);
-                $utilisateur->setEnabled(1);
-                $utilisateur->setMetier('Directeur');
-                $manager->persist($utilisateur);
-                $manager->flush();
+        $utilisateursDirecteur = [];
+        for ($i = 0; $i < 3; $i++) {
+            $utilisateur = new user();
+            $role = "Directeur";
+            $utilisateur->setUsername("Loup-" . $i);
+            $utilisateur->setEmail("Email" . $i . "@ticket.com");
+            $utilisateur->setPassword("Dir_password" . $i);
+            $utilisateur->setRoles([$role]);
+            $utilisateur->setEnabled(1);
+            $utilisateur->setMetier('Directeur');
+            $manager->persist($utilisateur);
+            $manager->flush();
 
-                $utilisateursDirecteur[] = $utilisateur;
-            }
+            $utilisateursDirecteur[] = $utilisateur;
+        }
 
         $utilisateursDeveloppeur = [];
-        for ($i=3; $i<13; $i++) {
+        for ($i = 3; $i < 13; $i++) {
             $role = "Developpeur";
             $utilisateur = new user();
-            $utilisateur->setUsername("Loup-".$i);
-            $utilisateur->setEmail("Email".$i);
-            $utilisateur->setPassword("password".$i);
+            $utilisateur->setUsername("Mouton-" . $i);
+            $utilisateur->setEmail("Email" . $i . "ticket.com");
+            $utilisateur->setPassword("Dev_password" . $i);
+            $utilisateur->setEnabled(1);
             $utilisateur->setRoles([$role]);
             $utilisateur->setMetier('Developpeur');
 
@@ -44,48 +45,37 @@ class AppFixtures extends Fixture
             $utilisateursDeveloppeur[] = $utilisateur;
         }
 
-        $projets = [];
-        $projet = new projets();
-        $projet->setNomProjet("Construire un pont");
-        $projet->setEntreprise("Veolia");
-        $projet->setChef("RENARD-1");
-        $projet->setDateDebut("15/05/2018");
-        $projet->setDateFin("30/08/2019");
-        $manager->persist($projet);
-        $manager->flush();
+        for ($i = 0; $i < 3; $i++) {
+            $projet = new projets();
+            $projet->setNomProjet("Faire le site d'ecoContruct" . $i);
+            $projet->setEntreprise("EcoConstruct");
+            $projet->setChef("RENARD-" . $i);
+            $projet->setDateDebut($i . "/" . $i . "/2018");
+            $projet->setDateFin($i . "/" . $i . "/2019");
 
-        $projets = $projet;
+            $manager->persist($projet);
+            $manager->flush();
+        }
 
-        $projet = new projets();
-        $projet->setNomProjet("Réparer la porte du musée");
-        $projet->setEntreprise("Etat");
-        $projet->setChef("RENARD-2");
-        $projet->setDateDebut("18/08/2018");
-        $projet->setDateFin("15/09/2019");
-        $manager->persist($projet);
-        $manager->flush();
+        for ($i = 0; $i < 3; $i++) {
+            for ($j = 0; $j < 10; $j++) {
+                $tache = new taches();
+                $tache->setProjet("Faire le site d'ecoContruct" . $i);
+                if ($j < 3) {
+                    $tache->setEvolution("Fini");
+                    $tache->setDescription("Créer la cahier des charges");
+                } elseif ($j < 6) {
+                    $tache->setEvolution("En cours");
+                    $tache->setDescription("Créer les interfaces");
+                } else {
+                    $tache->setEvolution("Pas commencé");
+                    $tache->setDescription("Livrer au client");
+                }
+                $tache->setAffectation("Matthieu-" . $j);
+                $manager->persist($tache);
+                $manager->flush();
+            }
 
-        $projets = $projet;
-
-        $projet = new projets();
-        $projet->setNomProjet("Construire le magasin");
-        $projet->setEntreprise("Carrefour");
-        $projet->setChef("RENARD-3");
-        $projet->setDateDebut("02/04/2018");
-        $projet->setDateFin("03/07/2019");
-        $manager->persist($projet);
-        $manager->flush();
-
-        $projets = $projet;
-
-
-        $tache = new taches();
-        $tache->setProjet("Construire le magasin");
-        $tache->setEvolution("Fini");
-        $tache->setDescription("Créer la cahier des charges");
-        $tache->setAffectation("Matthieu-1");
-        $manager->persist($tache);
-        $manager->flush();
-
+        }
     }
 }

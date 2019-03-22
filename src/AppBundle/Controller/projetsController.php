@@ -48,7 +48,6 @@ class projetsController extends Controller
             ->getRepository(projets::class)
         ;
         $projet = $repository->findBy( ['chef'=> $_POST['choixChef']]);
-        print_r($projet);
         return $this->render('projets/showProjet.html.twig', array('proj' => $projet));
     }
 
