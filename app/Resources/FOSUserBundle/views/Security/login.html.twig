@@ -1,0 +1,39 @@
+{% trans_default_domain 'FOSUserBundle' %}
+{%  extends "base.html.twig" %}
+
+{% block fos_user_content %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+    <link rel="stylesheet" href="/web/css/style.css">
+
+    <div class="wrapper">
+        <form action="{{ path('fos_user_security_check') }}" method="post" class="form-signin">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+            <h2 class="form-signin-heading">Enregistrement de votre compte :</h2><br>
+
+            {% if csrf_token %}
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+            {% endif %}
+
+            <input type="text" id="username" class="form-control" name="_username" value="{{ last_username }}"
+                   placeholder="{{ 'security.login.username'|trans }}" required="required" autofocus="autofocus"/>
+
+            <input type="password" id="password" class="form-control"
+                   placeholder="{{ 'security.login.password'|trans }}" name="_password" required="required"/>
+
+            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+            <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+
+            <input type="submit" id="_submit" class="btn btn-lg btn-primary btn-block" name="_submit"
+                   value="{{ 'security.login.submit'|trans }}" />
+
+            <div class="link_to_change">
+                <a href="{{ path('fos_user_registration_register') }}">S'enregistrer</a> - <a
+                        href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié</a>
+            </div>
+
+        </form>
+    </div>
+{% endblock fos_user_content %}
+
