@@ -1,9 +1,7 @@
 <!DOCTYPE html>
-
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <meta charset="UTF-8" />
     <title>{% block title %}{{ "Gestion Tickets" | trans }}{% endblock %}</title>
     {% block stylesheets %}
@@ -11,46 +9,37 @@
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
-
-<li><a href="{{ path('fos_user_security_login') }}">{{ "Connexion / Inscription" | trans }}</a></li>
-
-<body>
-<ul>
-    <li>{{ "Projet" | trans }}
-        <ul>
-            <li><a href="{{ path('projets_index') }}">{{ "Voir tous les projets" | trans }}</a></li>
-            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
-                <li><a href="{{ path('projets_new') }}">{{ "Créer un projet" | trans }}</a></li>
-            {% endif %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{{ path('homepage')}}">{{ "Accueil" | trans }}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('projets_index') }}">{{ "Projets" | trans }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('taches_index') }}">{{ "Tâches" | trans }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ path('user_index') }}">{{ "Utilisateurs" | trans }}</a>
+            </li>
         </ul>
-    </li>
-    <li>{{ "Taches" | trans }}
-        <ul>
-            <li><a href="{{ path('taches_index') }}">{{ "Voir toutes les taches" | trans }}</a></li>
-            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
-                <li><a href="{{ path('taches_new') }}">{{ "Créer une tache" | trans }}</a></li>
-                <li><a href="{{ path('taches_stats') }}">{{ "Statistiques sur les taches" | trans }}</a> </li>
-            {% endif %}
-        </ul>
-    </li>
-    <li> {{ "Utilisateurs" | trans }}
-        <ul>
-            <li><a href="{{ path('user_index') }}">{{ "Voir tous les utilisateurs" | trans }}</a> </li>
-            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
-                <li><a href="{{ path('fos_user_registration_register') }}">{{ "Ajouter un utilisateur" | trans }}</a></li>
-                <li><a href="{{ path('user_stats') }}">{{ "Statistiques sur les utilisateurs" | trans }}</a> </li>
-            {% endif %}
-        </ul>
-
-    </li>
-
-
-    <li><a href={{ path('homepage',{'_locale':'fr'}) }}>{{ "Francais" | trans }}</a></li>
-    <li><a href={{ path('homepage',{'_locale':'en'}) }}>{{ "Anglais" | trans }}</a></li>
-</ul>
+        <div class="nav navbar-nav navbar-right">
+            <form class="form-inline my-2 my-lg-0">
+                {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") or is_granted("ROLE_USER")%}
+                    <a href="{{ path('fos_user_security_logout') }}">{{ "Deconnexion" | trans }}</a>
+                {% else %}
+                    <a href="{{ path('fos_user_security_login') }}">{{ "Connexion / Inscription" | trans }}</a>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</nav>
+<li><a href={{ path('homepage',{'_locale':'fr'}) }}>{{ "Francais" | trans }}</a></li>
+<li><a href={{ path('homepage',{'_locale':'en'}) }}>{{ "Anglais" | trans }}</a></li>
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}
 {% block fos_user_content %}{% endblock %}
-
-</body>
 </html>

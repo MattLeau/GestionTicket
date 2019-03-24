@@ -1,31 +1,32 @@
 'Bienvenue sur notre site de gestion de tickets': 'Welcome on our ticketManager website'
 Bienvenue: Welcome
 'Gestion Tickets': 'Ticket manager'
-'Connexion / Inscription': 'Connexion / Inscription'
-Projet: Project
+'Connexion / Inscription': 'Sign in / Sign up'
+Deconnexion: Sign out
+Projets: Projects
 'Voir tous les projets': 'See all projects'
 'Créer un projet': 'Create a project'
-Taches: Tach
-'Voir toutes les taches': 'See all tach'
-'Créer une tache': 'Create tach'
-'Statistiques sur les taches': 'Statistics on tach'
+Tâches: Tasks
+'Voir toutes les taches': 'See all tasks'
+'Créer une tache': 'Create task'
+'Statistiques sur les taches': 'Statistics on tasks'
 Utilisateurs: Users
 'Voir tous les utilisateurs': 'See all users'
 'Ajouter un utilisateur': 'Create a user'
-'Statistiques sur les utilisateurs': 'Statistics on user'
+'Statistiques sur les utilisateurs': 'Statistics on users'
 Francais: French
 Anglais: English
-'Projet edit': 'Projet edit'
+'Projet edit': 'Project edit'
 Edit: Edit
 'Back to the list': 'Back to the list'
 Delete: Delete
-'Projets list': 'Projets list'
+'Projets list': 'Projects list'
 Id: Id
-'Nom projet': 'Projet name'
+'Nom projet': 'Project name'
 Entreprise: 'Firm'
 show: show
 edit: edit
-Rechercher: 'Look at'
+Rechercher: 'Search'
 'Projet creation': 'Project creation'
 Create: Create
 'Nom du projet': 'Project name'
@@ -36,28 +37,28 @@ Chef: 'Boss'
 'est le directeur': 'is director'
 'Date de début du projet': 'Start date of project'
 'Date de fin du projet': 'End date of project'
-'Ce directeur n''a pas de projet en cours': 'This director have not current project'
-'Retour à l''index des projets': 'Come back on idex project'
-'Tach edit': 'Tach edit'
-'Taches list': 'Taches list'
+'Ce directeur n''a pas de projet en cours': 'This director doesn''t have current project'
+'Retour à l''index des projets': 'Come back on projects index '
+'Tach edit': 'Task edit'
+'Taches list': 'Tasks list'
 Evolution: Evolution
 Affectation: Affectation
 Description: Description
 Actions: Actions
 'Choix de l''évolution': 'Choose evolution :'
 Statistiques: Statistics
-'Create a new tach': 'Create a new tach'
-'Tach creation': 'Tach creation'
-Tach: Tach
-'Statistiques sur l''évolution des taches': 'Statistics on tach evolution'
-'Etat de la tache': 'State on tach'
-'Nombre de tache à cette évolution': 'Number of tach in this state'
-'Voici les taches pourle projet': 'This is tach for the project'
-'Aucune tache pour ce projet': 'No tach for this project'
-'Retour à l''index des taches': 'Come back on tach index'
+'Create a new tach': 'Create a new task'
+'Tach creation': 'Task creation'
+Tach: Task
+'Statistiques sur l''évolution des taches': 'Statistics on tasks evolution'
+'Etat de la tache': 'State on task'
+'Nombre de tache à cette évolution': 'Number of task in this state'
+'Voici les taches pour le projet': 'This is tasks for the project'
+'Aucune tache pour ce projet': 'No task for this project'
+'Retour à l''index des taches': 'Come back on tasks index'
 'User edit': 'User edit'
 'Users list': 'Users list'
-'Nom d''utilisateur': 'User name'
+'Nom d''utilisateur': 'Username'
 Email: Email
 Role: Role
 'Voir plus': 'Show more'
@@ -70,7 +71,8 @@ Prenom: 'First name'
 Mdp: 'password'
 'Voici les': 'This is'
 'de l''entreprise': 'on the firm'
-'Il n''y a pas de personne ayant ce métier dans l''entreprise': 'Nobody have this job on the firm'
+'Il n''y a pas de personne ayant ce métier dans l''entreprise': 'Nobody has this job in the firm'
 'Retour à l''index des utilisateurs': 'Comeback in user index'
 Utilisateur: User
-'Nombre de tache affecté': 'Number affected tach'
+'Nombre de tache affecté': 'Number affected tasks'
+'Accueil': 'Home'
