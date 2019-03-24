@@ -25,9 +25,6 @@
                         <li>
                             <a href="{{ path('user_show', { 'id': user.id }) }}">{{ "Voir plus" | trans }}</a>
                         </li>
-                        <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">{{ "Modfier" | trans }}</a>
-                        </li>
                     </ul>
                 </td>
             </tr>
@@ -45,7 +42,9 @@
 
     <ul>
         <li>
-            <a href="{{ path('user_new') }}">{{ 'Create a new user' | trans }}</a>
+            {% if is_granted("ROLE_SUPER_ADMIN") %}
+                <a href="{{ path('fos_user_registration_register') }}">{{ 'Créer un nouvel utilisateur' | trans }}</a>
+            {% endif %}
         </li>
     </ul>
 {% endblock %}

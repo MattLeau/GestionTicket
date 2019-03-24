@@ -23,7 +23,9 @@
                             <a href="{{ path('projets_show', { 'id': projet.id }) }}">{{ "show" | trans }}</a>
                         </li>
                         <li>
-                            <a href="{{ path('projets_edit', { 'id': projet.id }) }}">{{ "edit" | trans }}</a>
+                            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
+                                <a href="{{ path('projets_edit', { 'id': projet.id }) }}">{{ "edit" | trans }}</a>
+                            {% endif %}
                         </li>
                     </ul>
                 </td>
@@ -43,7 +45,9 @@
     <ul>
 
         <li>
-            <a href="{{ path('projets_new') }}">Create a new projet</a>
+            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
+                <a href="{{ path('projets_new') }}">Create a new projet</a>
+            {% endif %}
         </li>
     </ul>
 {% endblock %}

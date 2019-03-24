@@ -45,7 +45,7 @@ Evolution: Evolution
 Affectation: Affectation
 Description: Description
 Actions: Actions
-'Choix de l''évolution': 'Choose evolution :'
+'Choix de l''évolution': 'Choose evolution'
 Statistiques: Statistics
 'Create a new tach': 'Create a new task'
 'Tach creation': 'Task creation'
@@ -64,7 +64,7 @@ Role: Role
 'Voir plus': 'Show more'
 Modfier: Edit
 Envoyer: Send
-'Create a new user': 'Create a new user'
+'Créer un nouvel utilisateur': 'Create a new user'
 User: User
 Nom: Name
 Prenom: 'First name'
@@ -76,3 +76,4 @@ Mdp: 'password'
 Utilisateur: User
 'Nombre de tache affecté': 'Number affected tasks'
 'Accueil': 'Home'
+'Créer un filtre': 'Create a filter'

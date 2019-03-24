@@ -25,10 +25,13 @@
                 <td>
                     <ul>
                         <li>
+
                             <a href="{{ path('taches_show', { 'id': tach.id }) }}">{{ "show" | trans }}</a>
                         </li>
                         <li>
-                            <a href="{{ path('taches_edit', { 'id': tach.id }) }}">{{ "edit" | trans }}</a>
+                            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
+                                <a href="{{ path('taches_edit', { 'id': tach.id }) }}">{{ "edit" | trans }}</a>
+                            {% endif %}
                         </li>
                     </ul>
                 </td>
@@ -49,10 +52,14 @@
     </form>
     <ul>
         <li>
-            <a href="{{ path('taches_stats') }}">{{ "Statistiques" | trans }} </a>
+            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") or is_granted("ROLE_USER")%}
+                <a href="{{ path('taches_stats') }}">{{ "Statistiques" | trans }} </a>
+            {% endif %}
         </li>
         <li>
-            <a href="{{ path('taches_new') }}">{{ "Create a new tach" | trans }}</a>
+            {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN")%}
+                <a href="{{ path('taches_new') }}">{{ "Create a new tach" | trans }}</a>
+            {% endif %}
         </li>
     </ul>
 {% endblock %}

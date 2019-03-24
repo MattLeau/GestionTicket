@@ -6,6 +6,7 @@
         <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
     {% endif %}
     <link rel="stylesheet" href="/web/css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <div class="wrapper">
         <form action="{{ path('fos_user_security_check') }}" method="post" class="form-signin">
@@ -25,7 +26,7 @@
             <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
             <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
 
-            <input type="submit" id="_submit" class="btn btn-lg btn-primary btn-block" name="_submit"
+            <input type="submit" id="_submit" class="btn btn-lg btn-dark btn-block" name="_submit"
                    value="{{ 'security.login.submit'|trans }}" />
 
             <div class="link_to_change">
@@ -35,5 +36,6 @@
 
         </form>
     </div>
+
 {% endblock fos_user_content %}
 
