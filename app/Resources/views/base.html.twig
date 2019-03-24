@@ -5,48 +5,48 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
     <meta charset="UTF-8" />
-    <title>{% block title %}Gestion Tickets{% endblock %}</title>
+    <title>{% block title %}{{ "Gestion Tickets" | trans }}{% endblock %}</title>
     {% block stylesheets %}
         <link rel="stylesheet" href="/web/css/style.css">
     {% endblock %}
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 
-<li><a href="{{ path('fos_user_security_login') }}">Connexion / Inscription</a></li>
+<li><a href="{{ path('fos_user_security_login') }}">{{ "Connexion / Inscription" | trans }}</a></li>
 
 <body>
 <ul>
-    <li>Projet
+    <li>{{ "Projet" | trans }}
         <ul>
-            <li><a href="{{ path('projets_index') }}">Voir tous les projets</a></li>
+            <li><a href="{{ path('projets_index') }}">{{ "Voir tous les projets" | trans }}</a></li>
             {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
-                <li><a href="{{ path('projets_new') }}">Créer un projet</a></li>
+                <li><a href="{{ path('projets_new') }}">{{ "Créer un projet" | trans }}</a></li>
             {% endif %}
         </ul>
     </li>
-    <li>Taches
+    <li>{{ "Taches" | trans }}
         <ul>
-            <li><a href="{{ path('taches_index') }}">Voir toutes les taches</a></li>
+            <li><a href="{{ path('taches_index') }}">{{ "Voir toutes les taches" | trans }}</a></li>
             {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
-                <li><a href="{{ path('taches_new') }}">Créer une tache</a></li>
-                <li><a href="{{ path('taches_stats') }}">Statistiques sur les taches</a> </li>
+                <li><a href="{{ path('taches_new') }}">{{ "Créer une tache" | trans }}</a></li>
+                <li><a href="{{ path('taches_stats') }}">{{ "Statistiques sur les taches" | trans }}</a> </li>
             {% endif %}
         </ul>
     </li>
-    <li> Utilisateurs
+    <li> {{ "Utilisateurs" | trans }}
         <ul>
-            <li><a href="{{ path('user_index') }}">Voir tous les utilisateurs</a> </li>
+            <li><a href="{{ path('user_index') }}">{{ "Voir tous les utilisateurs" | trans }}</a> </li>
             {% if is_granted("ROLE_ADMIN") or is_granted("ROLE_SUPER_ADMIN") %}
-                <li><a href="{{ path('fos_user_registration_register') }}">Ajouter un utilisateur</a></li>
-                <li><a href="{{ path('user_stats') }}">Statistiques sur les utilisateurs</a> </li>
+                <li><a href="{{ path('fos_user_registration_register') }}">{{ "Ajouter un utilisateur" | trans }}</a></li>
+                <li><a href="{{ path('user_stats') }}">{{ "Statistiques sur les utilisateurs" | trans }}</a> </li>
             {% endif %}
         </ul>
 
     </li>
 
 
-    <li><a href={{ path('homepage',{'_locale':'fr'}) }}>Francais</a></li>
-    <li><a href={{ path('homepage',{'_locale':'en'}) }}>Anglais</a></li>
+    <li><a href={{ path('homepage',{'_locale':'fr'}) }}>{{ "Francais" | trans }}</a></li>
+    <li><a href={{ path('homepage',{'_locale':'en'}) }}>{{ "Anglais" | trans }}</a></li>
 </ul>
 {% block body %}{% endblock %}
 {% block javascripts %}{% endblock %}

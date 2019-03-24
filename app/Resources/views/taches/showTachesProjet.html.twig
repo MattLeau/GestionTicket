@@ -2,14 +2,14 @@
 
 {% block body %}
     {% if taches %}
-    <h1>Voici les taches pourle projet " {{ taches[0].projet }} "</h1>
+    <h1>{{ "Voici les taches pourle projet" | trans }} " {{ taches[0].projet }} "</h1>
         <table border="1">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Evolution</th>
-                <th>Affectation</th>
-                <th>Description</th>
+                <th>{{ "Id" | trans }}</th>
+                <th>{{ "Evolution" | trans }}</th>
+                <th>{{ "Affectation" | trans }}</th>
+                <th>{{ "Description" | trans }}</th>
             </tr>
             </thead>
             <tbody>
@@ -24,7 +24,7 @@
             </tbody>
         </table>
     {% else %}
-        <p>Aucune tache pour ce projet</p>
+        <p>{{ "Aucune tache pour ce projet" | trans }}</p>
     {% endif %}
-    <a href="{{ path('taches_index') }}">Retour à l'index des taches</a>
+    <a href="{{ path('taches_index') }}">{{ "Retour à l'index des taches" | trans }}</a>
 {% endblock %}

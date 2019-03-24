@@ -1,28 +1,28 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>User</h1>
+    <h1>{{ "User" | trans }}</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{ "Id" | trans }}</th>
                 <td>{{ user.id }}</td>
             </tr>
             <tr>
-                <th>Nom</th>
+                <th>{{ "Nom" | trans }}</th>
                 <td>{{ user.username }}</td>
             </tr>
             <tr>
-                <th>Prenom</th>
+                <th>{{ "Prenom" | trans }}</th>
                 <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th>Role</th>
+                <th>{{ "Role" | trans }}</th>
                 <td>{{ user.roles[0] }}</td>
             </tr>
             <tr>
-                <th>Mdp</th>
+                <th>{{ "Mdp" | trans }}</th>
                 <td>{{ user.password }}</td>
             </tr>
         </tbody>
@@ -30,15 +30,15 @@
 
     <ul>
         <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
+            <a href="{{ path('user_index') }}">{{ "Back to the list" | trans }}</a>
         </li>
         <li>
-            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
+            <a href="{{ path('user_edit', { 'id': user.id }) }}">{{ "Edit" | trans }}</a>
         </li>
 
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="{{ 'Delete' | trans }}">
             {{ form_end(delete_form) }}
         </li>
     </ul>

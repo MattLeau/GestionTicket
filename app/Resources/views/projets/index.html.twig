@@ -1,14 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Projets list</h1>
+    <h1>{{ "Projets list" | trans }}</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Nom projet</th>
-                <th>Entreprise</th>
+                <th>{{ "Id" | trans }}</th>
+                <th>{{ "Nom projet" | trans }}</th>
+                <th>{{ "Entreprise" | trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -20,10 +20,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('projets_show', { 'id': projet.id }) }}">show</a>
+                            <a href="{{ path('projets_show', { 'id': projet.id }) }}">{{ "show" | trans }}</a>
                         </li>
                         <li>
-                            <a href="{{ path('projets_edit', { 'id': projet.id }) }}">edit</a>
+                            <a href="{{ path('projets_edit', { 'id': projet.id }) }}">{{ "edit" | trans }}</a>
                         </li>
                     </ul>
                 </td>
@@ -37,7 +37,7 @@
                 <option>{{ i.username }}</option>
             {% endfor %}
         </select>
-        <input type="submit" value="Rechercher" />
+        <input type="submit" value="{{ 'Rechercher' | trans }}" />
     </form>
 
     <ul>

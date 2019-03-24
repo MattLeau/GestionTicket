@@ -49,7 +49,7 @@ class AppFixtures extends Fixture
             $projet = new projets();
             $projet->setNomProjet("Faire le site d'ecoContruct" . $i);
             $projet->setEntreprise("EcoConstruct");
-            $projet->setChef("RENARD-" . $i);
+            $projet->setChef("Loup-" . $i);
             $projet->setDateDebut($i . "/" . $i . "/2018");
             $projet->setDateFin($i . "/" . $i . "/2019");
 
@@ -58,7 +58,7 @@ class AppFixtures extends Fixture
         }
 
         for ($i = 0; $i < 3; $i++) {
-            for ($j = 0; $j < 10; $j++) {
+            for ($j = 3; $j < 10; $j++) {
                 $tache = new taches();
                 $tache->setProjet("Faire le site d'ecoContruct" . $i);
                 if ($j < 3) {
@@ -71,7 +71,7 @@ class AppFixtures extends Fixture
                     $tache->setEvolution("Pas commencé");
                     $tache->setDescription("Livrer au client");
                 }
-                $tache->setAffectation("Matthieu-" . $j);
+                $tache->setAffectation("Mouton-" . $j);
                 $manager->persist($tache);
                 $manager->flush();
             }

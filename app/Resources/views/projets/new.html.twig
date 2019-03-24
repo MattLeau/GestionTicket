@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Projet creation</h1>
+    <h1>{{ "Projet creation" | trans }}</h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="{{ 'Create' | trans }}" />
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('projets_index') }}">Back to the list</a>
+            <a href="{{ path('projets_index') }}">{{ "Back to the list" | trans }}</a>
         </li>
     </ul>
 {% endblock %}

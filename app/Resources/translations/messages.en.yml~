@@ -64,13 +64,3 @@ Role: __Role
 Modfier: __Modfier
 Envoyer: __Envoyer
 'Create a new user': '__Create a new user'
-User: __User
-Nom: __Nom
-Prenom: __Prenom
-Mdp: __Mdp
-'Voici les': '__Voici les'
-'de l''entreprise': '__de l''entreprise'
-'Il n''y a pas de personne ayant ce métier dans l''entreprise': '__Il n''y a pas de personne ayant ce métier dans l''entreprise'
-'Retour à l''index des utilisateurs': '__Retour à l''index des utilisateurs'
-Utilisateur: __Utilisateur
-'Nombre de tache affecté': '__Nombre de tache affecté'

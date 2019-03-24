@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Users list</h1>
+    <h1>{{ "Users list" | trans }}</h1>
 
     <table border="1">
         <thead>
         <tr>
-            <th>Id</th>
-            <th>Nom d'utilisateur</th>
-            <th>Email</th>
-            <th>Role</th>
-            <th>Actions</th>
+            <th>{{ "Id" | trans }}</th>
+            <th>{{ "Nom d'utilisateur" | trans }}</th>
+            <th>{{ "Email" | trans }}</th>
+            <th>{{ "Role" | trans }}</th>
+            <th>{{ "Actions" | trans }}</th>
         </tr>
         </thead>
         <tbody>
@@ -23,10 +23,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('user_show', { 'id': user.id }) }}">Voir plus</a>
+                            <a href="{{ path('user_show', { 'id': user.id }) }}">{{ "Voir plus" | trans }}</a>
                         </li>
                         <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">Modfier</a>
+                            <a href="{{ path('user_edit', { 'id': user.id }) }}">{{ "Modfier" | trans }}</a>
                         </li>
                     </ul>
                 </td>
@@ -35,12 +35,17 @@
         </tbody>
     </table>
     <form method="post" action="{{ path('user_metier') }}">
-        <p>Créer un filtre : <input type="text" name="metier" value="Metier recherché" /><input type="submit" value="Envoyer" /></p>
+        <p>Créer un filtre :
+            <select name="metier">
+                <option>Directeur</option>
+                <option>Developpeur</option>
+            </select>
+            <input type="submit" value="{{ 'Envoyer' | trans }}" /></p>
     </form>
 
     <ul>
         <li>
-            <a href="{{ path('user_new') }}">Create a new user</a>
+            <a href="{{ path('user_new') }}">{{ 'Create a new user' | trans }}</a>
         </li>
     </ul>
 {% endblock %}

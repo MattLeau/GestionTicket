@@ -1,32 +1,32 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Projet</h1>
+    <h1>{{ "Projet" | trans }}</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
+                <th>{{ "Id" | trans }}</th>
                 <td>{{ projet.id }}</td>
             </tr>
             <tr>
-                <th>Nomprojet</th>
+                <th>{{ "Nom du projet" | trans }}</th>
                 <td>{{ projet.nomProjet }}</td>
             </tr>
             <tr>
-                <th>Entreprise</th>
+                <th>{{ "Entreprise" | trans }}</th>
                 <td>{{ projet.entreprise }}</td>
             </tr>
             <tr>
-                <th>Chef</th>
+                <th>{{ "Chef" | trans }}</th>
                 <td>{{ projet.chef }}</td>
             </tr>
             <tr>
-                <th>Datefin</th>
+                <th>{{ "Date de fin" | trans }}</th>
                 <td>{{  projet.dateFin }}</td>
             </tr>
             <tr>
-                <th>Datedebut</th>
+                <th>{{ "Date de debut" | trans }}</th>
                 <td>{{ projet.dateDebut }}</td>
             </tr>
         </tbody>
@@ -34,14 +34,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('projets_index') }}">Back to the list</a>
+            <a href="{{ path('projets_index') }}">{{ "Back to the list" | trans }}</a>
         </li>
         <li>
-            <a href="{{ path('projets_edit', { 'id': projet.id }) }}">Edit</a>
+            <a href="{{ path('projets_edit', { 'id': projet.id }) }}">{{ "Edit" | trans }}</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="{{ 'Delete' | trans }}">
             {{ form_end(delete_form) }}
         </li>
     </ul>

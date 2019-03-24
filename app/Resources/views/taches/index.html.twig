@@ -1,17 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Taches list</h1>
+    <h1>{{ "Taches list" | trans }}</h1>
 
     <table border="1">
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Projet</th>
-                <th>Evolution</th>
-                <th>Affectation</th>
-                <th>Description</th>
-                <th>Actions</th>
+                <th>{{ "Id" | trans }}</th>
+                <th>{{ "Projet" | trans }}</th>
+                <th>{{ "Evolution" | trans }}</th>
+                <th>{{ "Affectation" | trans }}</th>
+                <th>{{ "Description" | trans }}</th>
+                <th>{{ "Actions" | trans }}</th>
             </tr>
         </thead>
         <tbody>
@@ -25,10 +25,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('taches_show', { 'id': tach.id }) }}">show</a>
+                            <a href="{{ path('taches_show', { 'id': tach.id }) }}">{{ "show" | trans }}</a>
                         </li>
                         <li>
-                            <a href="{{ path('taches_edit', { 'id': tach.id }) }}">edit</a>
+                            <a href="{{ path('taches_edit', { 'id': tach.id }) }}">{{ "edit" | trans }}</a>
                         </li>
                     </ul>
                 </td>
@@ -37,22 +37,22 @@
         </tbody>
     </table>
     <form method="post" action="{{ path('taches_tachesProjet') }}">
-        <p>Choix de l'évolution :</p>
+        <p>{{ "Choix de l'évolution" | trans }} :</p>
         <form method="post" action="{{ path('projet_nom') }}">
             <select name="choixChef" size="1">
                 {% for i in resultat %}
                     <option>{{ i.evolution }}</option>
                 {% endfor %}
             </select>
-            <input type="submit" value="Rechercher" />
+            <input type="submit" value="{{ 'Rechercher' | trans }}" />
         </form>
     </form>
     <ul>
         <li>
-            <a href="{{ path('taches_stats') }}">Statistiques </a>
+            <a href="{{ path('taches_stats') }}">{{ "Statistiques" | trans }} </a>
         </li>
         <li>
-            <a href="{{ path('taches_new') }}">Create a new tach</a>
+            <a href="{{ path('taches_new') }}">{{ "Create a new tach" | trans }}</a>
         </li>
     </ul>
 {% endblock %}

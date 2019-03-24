@@ -2,15 +2,15 @@
 
 {% block body %}
     {% if proj %}
-        <h1>Voici les projects dont {{ proj[0].chef }} est le directeur</h1>
+        <h1>{{ "Voici les projects dont" | trans }} {{ proj[0].chef }} {{ "est le directeur" | trans }}</h1>
         <table border="1">
             <thead>
             <tr>
-                <th>Id</th>
-                <th>Nom du projet</th>
-                <th>Entreprise</th>
-                <th>Date de début du projet</th>
-                <th>Date de fin du projet</th>
+                <th>{{ "Id" | trans }}</th>
+                <th>{{ "Nom du projet" | trans }}</th>
+                <th>{{ "Entreprise" | trans }}</th>
+                <th>{{ "Date de début du projet" | trans }}</th>
+                <th>{{ "Date de fin du projet" | trans }}</th>
             </tr>
             </thead>
             <tbody>
@@ -26,8 +26,8 @@
             </tbody>
         </table>
     {% else %}
-        <p>Ce directeur n'a pas de projet en cours</p>
+        <p>{{ "Ce directeur n'a pas de projet en cours" | trans }}</p>
     {% endif %}
 
-    <a href="{{ path('projets_index') }}">Retour à l'index des projets</a>
+    <a href="{{ path('projets_index') }}">{{ "Retour à l'index des projets" | trans }}</a>
 {% endblock %}
