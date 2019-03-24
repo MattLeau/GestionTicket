@@ -43,7 +43,7 @@ class userController extends Controller
             ->getDoctrine()
             ->getRepository(user::class)
         ;
-        $user = $repository->findBy( ['role' => $_POST['metier']]);
+        $user = $repository->findBy( ['metier' => $_POST['metier']]);
         return $this->render('user/showMetier.html.twig', array('user' => $user));
     }
 

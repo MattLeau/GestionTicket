@@ -55,7 +55,6 @@ class tachesController extends Controller
             ->getRepository(taches::class)
         ;
         $resultat = $repository->findBy( ["evolution" => $_POST['projet']]);
-        print_r($resultat);
         return $this->render('taches/showTachesProjet.html.twig', array('taches' => $resultat));
     }
 
@@ -75,43 +74,9 @@ class tachesController extends Controller
             ->getQuery();
 
         $products = $query->execute();
-        print_r($products);
         return $this->render('taches/showStatsTaches.html.twig',array('resultat' => $products));
 
 
-        /*
-        $qb = $em->createQueryBuilder();
-
-        $qb->select('u')
-            ->from('user', 'u')
-            ->where('u.id = 1');
-
-        return $this->render('taches/showStatsTaches.html.twig',array('tab' => $qb));
-    */
-        /*
-                $repository = $this
-                    ->getDoctrine()
-                    ->getRepository(user::class)
-                ;
-                $resultat =  $repository->createQueryBuilder('u')
-                    ->select('count(u.id)')
-                    ->getQuery()
-                    ->getSingleScalarResult();
-                return $this->render('taches/showStatsTaches.html.twig',array('tab' => $resultat));
-        */
-        /*
-        ->where('u.nom = :MESNAGE-1')
-        $em = $this->getDoctrine()->getManager();
-
-        $RAW_QUERY = 'SELECT * FROM user;';
-
-        $statement = $em->getConnection()->preprare($RAW_QUERY);
-        $statement->execute();
-
-        $result = $statement->fetchAll();
-
-        return $this->render('taches/showStatsTaches.html.twig',array('tab' => $result));
-        */
     }
 
 

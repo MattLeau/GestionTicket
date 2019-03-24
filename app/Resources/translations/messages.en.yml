@@ -19,58 +19,58 @@ Anglais: English
 Edit: Edit
 'Back to the list': 'Back to the list'
 Delete: Delete
-'Projets list': '__Projets list'
-Id: __Id
-'Nom projet': '__Nom projet'
-Entreprise: __Entreprise
-show: __show
-edit: __edit
-Rechercher: __Rechercher
-'Projet creation': '__Projet creation'
-Create: __Create
-'Nom du projet': '__Nom du projet'
-Chef: __Chef
-'Date de fin': '__Date de fin'
-'Date de debut': '__Date de debut'
-'Voici les projects dont': '__Voici les projects dont'
-'est le directeur': '__est le directeur'
-'Date de début du projet': '__Date de début du projet'
-'Date de fin du projet': '__Date de fin du projet'
-'Ce directeur n''a pas de projet en cours': '__Ce directeur n''a pas de projet en cours'
-'Retour à l''index des projets': '__Retour à l''index des projets'
-'Tach edit': '__Tach edit'
-'Taches list': '__Taches list'
-Evolution: __Evolution
-Affectation: __Affectation
-Description: __Description
-Actions: __Actions
-'Choix de l''évolution': '__Choix de l''évolution'
-Statistiques: __Statistiques
-'Create a new tach': '__Create a new tach'
-'Tach creation': '__Tach creation'
-Tach: __Tach
-'Statistiques sur l''évolution des taches': '__Statistiques sur l''évolution des taches'
-'Etat de la tache': '__Etat de la tache'
-'Nombre de tache à cette évolution': '__Nombre de tache à cette évolution'
-'Voici les taches pourle projet': '__Voici les taches pourle projet'
-'Aucune tache pour ce projet': '__Aucune tache pour ce projet'
-'Retour à l''index des taches': '__Retour à l''index des taches'
-'User edit': '__User edit'
-'Users list': '__Users list'
-'Nom d''utilisateur': '__Nom d''utilisateur'
-Email: __Email
-Role: __Role
-'Voir plus': '__Voir plus'
-Modfier: __Modfier
-Envoyer: __Envoyer
-'Create a new user': '__Create a new user'
-User: __User
-Nom: __Nom
-Prenom: __Prenom
-Mdp: __Mdp
-'Voici les': '__Voici les'
-'de l''entreprise': '__de l''entreprise'
-'Il n''y a pas de personne ayant ce métier dans l''entreprise': '__Il n''y a pas de personne ayant ce métier dans l''entreprise'
-'Retour à l''index des utilisateurs': '__Retour à l''index des utilisateurs'
-Utilisateur: __Utilisateur
-'Nombre de tache affecté': '__Nombre de tache affecté'
+'Projets list': 'Projets list'
+Id: Id
+'Nom projet': 'Projet name'
+Entreprise: 'Firm'
+show: show
+edit: edit
+Rechercher: 'Look at'
+'Projet creation': 'Project creation'
+Create: Create
+'Nom du projet': 'Project name'
+Chef: 'Boss'
+'Date de fin': 'End date'
+'Date de debut': 'Start date'
+'Voici les projects dont': 'This is project where'
+'est le directeur': 'is director'
+'Date de début du projet': 'Start date of project'
+'Date de fin du projet': 'End date of project'
+'Ce directeur n''a pas de projet en cours': 'This director have not current project'
+'Retour à l''index des projets': 'Come back on idex project'
+'Tach edit': 'Tach edit'
+'Taches list': 'Taches list'
+Evolution: Evolution
+Affectation: Affectation
+Description: Description
+Actions: Actions
+'Choix de l''évolution': 'Choose evolution :'
+Statistiques: Statistics
+'Create a new tach': 'Create a new tach'
+'Tach creation': 'Tach creation'
+Tach: Tach
+'Statistiques sur l''évolution des taches': 'Statistics on tach evolution'
+'Etat de la tache': 'State on tach'
+'Nombre de tache à cette évolution': 'Number of tach in this state'
+'Voici les taches pourle projet': 'This is tach for the project'
+'Aucune tache pour ce projet': 'No tach for this project'
+'Retour à l''index des taches': 'Come back on tach index'
+'User edit': 'User edit'
+'Users list': 'Users list'
+'Nom d''utilisateur': 'User name'
+Email: Email
+Role: Role
+'Voir plus': 'Show more'
+Modfier: Edit
+Envoyer: Send
+'Create a new user': 'Create a new user'
+User: User
+Nom: Name
+Prenom: 'First name'
+Mdp: 'password'
+'Voici les': 'This is'
+'de l''entreprise': 'on the firm'
+'Il n''y a pas de personne ayant ce métier dans l''entreprise': 'Nobody have this job on the firm'
+'Retour à l''index des utilisateurs': 'Comeback in user index'
+Utilisateur: User
+'Nombre de tache affecté': 'Number affected tach'
